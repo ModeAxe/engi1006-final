@@ -17,8 +17,12 @@ def hello():
     return render_template("index.html")
 
 @app.route("/1006")
-def home():
-    return render_template("1006.html")    
+def engi1006():
+    return render_template("1006.html")
+
+@app.route("/spring2020classes")
+def classes():
+    return render_template("springClasses.html")  
 
 #start the server
 if __name__ == "__main__":
