@@ -29,7 +29,6 @@ def classes():
 def billboard():
     if request.method == "POST":
         req = request.form
-        
         word = req['word']
         num = billboardcounter.count(word)
         print(word)
