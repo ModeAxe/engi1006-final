@@ -31,7 +31,6 @@ def billboard():
         req = request.form
         word = req['word']
         num = billboardcounter.count(word)
-        print(word)
         return render_template("billboardsearch.html", word=word, num=num)
     
 
