@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 21 14:57:17 2020
+Created on Monday, ‎May ‎11, ‎2020, ‏‎6:31:54 PM
 
-@author: etill
+@author: modeaxe
 """
 
 #import statements
@@ -20,7 +20,7 @@ def hello():
 def engi1006():
     return render_template("1006.html")
 
-@app.route("/spring2020classes")
+@app.route("/classes")
 def classes():
     return render_template("springClasses.html")  
 
