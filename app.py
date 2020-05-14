@@ -6,7 +6,8 @@ Created on Monday, ‎May ‎11, ‎2020, ‏‎6:31:54 PM
 """
 
 #import statements
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
+import billboardcounter
 
 #Flask app variable
 app = Flask(__name__)
@@ -22,7 +23,21 @@ def engi1006():
 
 @app.route("/classes")
 def classes():
-    return render_template("springClasses.html")  
+    return render_template("springClasses.html")
+
+@app.route("/billboard", methods=['GET','POST'])
+def billboard():
+    if request.method == "POST":
+        req = request.form
+        
+        word = req['word']
+        num = billboardcounter.count(word)
+        print(word)
+        return render_template("billboardsearch.html", word=word, num=num)
+    
+
+    return render_template("billboardsearch.html", word = "_____", num = "0")  
+
 
 #start the server
 if __name__ == "__main__":
